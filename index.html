@@ -1,17 +1,201 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTP-8">
-       <title>바람이 불어오는 곳</title>
-  </head>
-  <body>
-      <h1>시의 예</h1>
-      <pre>
-        <b>바람</b>이 불어오는 곳
-        그곳에 내 <strong>마음</strong>이 머무네
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 자기소개 time!</title>
+    <style>
+        /* 1. 전체 디자인 스타일 (CSS) */
+        body {
+            font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+            line-height: 1.8;
+            margin: 40px auto;
+            max-width: 800px;
+            padding: 0 20px;
+            color: #333;
+            background-color: #fafafa;
+        }
 
-        <span style="color:green;"><b>바람</b>이 그치는 곳
-        그곳에 내 <strong>꿈</strong>이 쉬어가네</span>
-      </pre>
+        header {
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        header h1 {
+            font-size: 28px;
+            color: #222;
+            margin-bottom: 5px;
+        }
+
+        /* 메뉴(네비게이션) 스타일 */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0 0 0;
+            display: flex;
+            gap: 15px;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+        }
+
+        nav li {
+            cursor: pointer;
+            font-size: 14px;
+            color: #666;
+            transition: 0.3s;
+        }
+
+        nav li:hover, nav li.active {
+            color: #000;
+            font-weight: bold;
+        }
+
+        /* 본문 내용 상자 스타일 */
+        main {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-top: 20px;
+            min-height: 400px;
+        }
+
+        /* 기본적으로 페이지 숨기기 */
+        .page {
+            display: none;
+        }
+
+        /* 선택된 페이지만 보이기 */
+        .page.active {
+            display: block;
+        }
+
+        /* 상세 요소 디자인 */
+        h2.page-title {
+            font-size: 26px;
+            color: #111;
+            margin-top: 0;
+            border-bottom: 2px solid #333;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f9f9f9;
+            width: 25%;
+        }
+
+        blockquote {
+            background: #fcfcfc;
+            border-left: 4px solid #333;
+            margin: 20px 0;
+            padding: 15px 20px;
+            font-style: italic;
+            color: #555;
+        }
+
+        .hobby-box, .review-box {
+            border-left: 4px solid #333;
+            padding-left: 15px;
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 id="user-name">윤정욱</h1>
+        <img src="f.jpg"alt="이미지"width="117"><nav>
+            <ul>
+                <li id="btn-home" class="active" onclick="showPage('home')">HOME</li>
+                <li id="btn-about" onclick="showPage('about')">자기소개</li>
+                <li id="btn-hobby" onclick="showPage('hobby')">취미</li>
+                <li id="btn-review" onclick="showPage('review')">수업 후기</li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="page active">
+            <h2 class="page-title">Welcome</h2>
+            <p>반갑습니다! 학생 <strong>윤정욱</strong>의 자신을 소개하는 개인 웹페이지입니다.</p>
+            <p>이곳은 제가 공부한 내용과 저에 대한 이야기를 기록하는 공간입니다.</p>
+            <p>상단 메뉴를 클릭하면 내용을 바로 확인하실 수 있습니다.</p>
+        </section>
+
+        <section id="about" class="page">
+            <h2 class="page-title">자기소개</h2>
+            <p>안녕하세요. 배움과 성장을 즐기는 학생입니다.</p>
+            <table>
+                <tr><th>이름</th><td>윤정욱</td></tr>
+                <tr><th>신분</th><td>학생</td></tr>
+                <tr><th>관심 분야</th><td>웹 프로그래밍, IT 기술, 로봇 기술, 인공 지능</td></tr>
+                <tr><th>비전</th><td>열심히 살아서 나쁠거 없다!</td></tr>
+            </table>
+            <blockquote>
+                "배움은 성장의 기회를 만드는 과정이다. 포기하지 않고 도전하는 배움을 지향합니다."
+            </blockquote>
+        </section>
+
+        <section id="hobby" class="page">
+            <h2 class="page-title">취미</h2>
+            <div class="hobby-box">
+                <h3>웹 코딩하기</h3>
+                <p>배운 내용을 토대로 나만의 화면을 직접 꾸미는 것을 좋아합니다.</p>
+            </div>
+            <div class="hobby-box">
+                <h3>로봇 관련 유튜브 보기</h3>
+                <p>평소에 자주 하는 것이고 제가 관심있는 지식을 쌓는 행동을 지향합니다.</p>
+            </div>
+            <div class="hobby-box">
+                <h3>음악 듣기</h3>
+                <p>음악 듣는 것을 좋아하고 음악을 들으면서 하는 것이 많습니다.<br>
+                    좋아하는 음악: Ed Sheeran- Shape Of You</br></p>
+            </div>
+        </section>
+
+        <section id="review" class="page">
+            <h2 class="page-title">수업 후기</h2>
+            <div class="review-box">
+                <h3>웹 프로그래밍 수업을 마치며</h3>
+                <p>단순한 코드가 화면으로 변하는 과정이 매우 신기했습니다. 에러를 해결하며 배운 경험들이 저를 더 성장시킨 것 같습니다.
+                    어려운 부분도 심심치 않게 있었지만 그 어려움을 해결하는 과정들이 즐거웠습니다.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function showPage(pageId) {
+            // 1. 모든 페이지 숨기기
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+
+            // 2. 모든 메뉴 버튼 비활성화
+            const menuItems = document.querySelectorAll('nav li');
+            menuItems.forEach(item => item.classList.remove('active'));
+
+            // 3. 선택한 페이지 보이기
+            document.getElementById(pageId).classList.add('active');
+
+            // 4. 선택한 메뉴 버튼 강조
+            const activeBtn = document.querySelector(`li[onclick="showPage('${pageId}')"]`);
+            activeBtn.classList.add('active');
+        }
+    </script>
+
 </body>
 </html>
